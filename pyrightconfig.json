@@ -1,0 +1,13 @@
+{
+  "pythonVersion": "3.14",
+  "pythonPlatform": "Windows",
+  "pythonPath": "C:/Users/whoca/AppData/Local/Python/pythoncore-3.14-64/python.exe",
+  "venvPath": "C:/Users/whoca/AppData/Local/Python/pythoncore-3.14-64",
+  "extraPaths": [
+    "C:/Users/whoca/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages"
+  ],
+  "typeCheckingMode": "off",
+  "reportMissingImports": "none",
+  "reportMissingModuleSource": "none",
+  "useLibraryCodeForTypes": true
+}
