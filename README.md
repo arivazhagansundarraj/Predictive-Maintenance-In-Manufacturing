@@ -1,142 +1,189 @@
-# ⚙️ PredictIQ — Industrial IoT Predictive Maintenance Platform
+<div align="center">
 
-> AI-powered predictive maintenance system for smart manufacturing plants, built on the **AI4I 2020 Predictive Maintenance Dataset**.
+# 🚀 Arivazhagan Sundarraj — Personal Portfolio
 
-![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.35-red)
-![ML](https://img.shields.io/badge/ML-XGBoost%20|%20LightGBM%20|%20CatBoost%20|%20RF-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+[![React](https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![CSS3](https://img.shields.io/badge/CSS3-Custom-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
----
+**A modern, dark-themed personal portfolio website built with React & Vite.**  
+Designed to attract HR professionals and showcase skills in AI, Machine Learning, Data Science, and Software Development.
 
-## 🚀 Features
+[📧 Contact](mailto:arivazhaganarivu0611@gmail.com) &nbsp;|&nbsp; [💼 LinkedIn](https://www.linkedin.com/in/arivazhagan-sundarraj-862004394) &nbsp;|&nbsp; [🐙 GitHub](https://github.com/arivazhagansundarraj)
 
-| Module | Description |
-|--------|-------------|
-| 🏠 **Home Dashboard** | Fleet KPIs, health gauge, failure mode analysis |
-| 📊 **Dataset Insights** | Full EDA, sensor distributions, correlation heatmap, SMOTE analysis |
-| 🏆 **Model Evaluation** | 4-model comparison, ROC/PR curves, confusion matrices, feature importance |
-| 🔮 **Live Prediction** | Real-time failure probability from sensor inputs with downloadable report |
-| 🚨 **Anomaly Detection** | Isolation Forest dashboard with scatter plots and alert tables |
-| 🔧 **Maintenance Panel** | Batch fleet scoring with color-coded recommendations and CSV export |
+</div>
 
 ---
 
-## 🧠 ML Pipeline
+## ✨ Features
 
-### Models Trained
-- **Random Forest** — 200 estimators, balanced class weights
-- **XGBoost** — gradient boosting with scale_pos_weight
-- **LightGBM** — fast gradient boosting
-- **CatBoost** — categorical-friendly gradient boosting
-
-### Feature Engineering
-| Feature | Formula |
-|---------|---------|
-| Temperature Difference | Process temp − Air temp |
-| Wear Rate | Tool wear ÷ Rotational speed |
-| Mechanical Load Index | Torque × Tool wear ÷ 1000 |
-
-### Class Imbalance
-SMOTE (Synthetic Minority Oversampling) is applied to the training set to address the ~3.4% failure rate.
-
-### Model Selection
-Best model selected by harmonic mean of **Recall** and **ROC-AUC** to maximise failure detection sensitivity.
+- 🌑 **Dark Theme** — Premium dark UI with gradient accents and glassmorphism effects
+- 🎬 **Smooth Animations** — CSS keyframe animations + IntersectionObserver scroll reveals
+- 📱 **Fully Responsive** — Optimized for desktop, tablet, and mobile devices
+- ⚡ **Fast Performance** — Built with Vite for lightning-fast HMR and builds
+- 🔗 **Direct Integration** — Gmail compose links, LinkedIn, and GitHub buttons
+- 🖼️ **Certificate Viewer** — Modal lightbox to view and download certificates
+- 📊 **Interactive Skills** — Tabbed skill categories with animated progress bars
+- 🧭 **Smart Navbar** — Active section detection with smooth scroll navigation
 
 ---
 
-## 🛠️ Setup & Installation
+## 🗂️ Sections
 
-### Prerequisites
-- Python 3.9+
-- pip
-
-### 1. Clone / Download
-```bash
-git clone https://github.com/your-username/predictiq.git
-cd predictiq
-```
-
-### 2. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Run the app
-```bash
-streamlit run app.py
-```
-
-> **First run**: Models are automatically trained on first launch (~60–90 seconds). Subsequent runs load cached models instantly.
+| Section | Description |
+|---|---|
+| **Hero** | Name, role, social links, and animated background |
+| **About** | Personal bio, career objective, and LinkedIn profile |
+| **Skills** | Technical Skills, Tools & IDEs, and Soft Skills tabs |
+| **Projects** | Featured project cards with tech stack and features |
+| **Certifications** | Certificate cards with modal image viewer |
+| **Education** | Timeline-style education history |
+| **Contact** | Contact form + info cards with Gmail/LinkedIn/GitHub links |
+| **Footer** | Quick links and social connections |
 
 ---
 
-## ☁️ Deployment
+## 🛠️ Tech Stack
 
-### Streamlit Cloud (Recommended)
-1. Push the repository to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Connect your repo, set `app.py` as the entry point
-4. Deploy!
-
-### Vercel (Redirect)
-Update `vercel.json` with your Streamlit Cloud URL, then deploy to Vercel for a custom domain redirect.
-
-### Docker (Self-hosting)
-```dockerfile
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 8501
-CMD ["streamlit", "run", "app.py", "--server.headless=true"]
-```
+| Technology | Purpose |
+|---|---|
+| **React 18** | UI component architecture |
+| **Vite** | Build tool & dev server |
+| **Vanilla CSS** | Styling with custom design system |
+| **CSS Keyframes** | Animations and transitions |
+| **IntersectionObserver API** | Scroll-triggered reveal animations |
+| **Google Fonts** | Inter, Space Grotesk, JetBrains Mono |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-├── Dataset/
-│   └── ai4i2020.csv          # AI4I 2020 dataset
-├── models/                    # Auto-generated model artefacts
-│   ├── best_model.pkl
-│   ├── scaler.pkl
-│   ├── isolation_forest.pkl
-│   └── model_metrics.json
+Portfolio/
+├── public/
+│   └── certs/              # Certificate images (cert_hp_life.jpg, etc.)
 ├── src/
-│   ├── data_processing.py     # Cleaning, feature engineering, SMOTE
-│   ├── model_training.py      # 4-model training & evaluation
-│   ├── anomaly_detection.py   # Isolation Forest
-│   ├── feature_importance.py  # Importance extraction
-│   ├── health_score.py        # Health score [0–100]
-│   └── recommendation.py      # Maintenance recommendation engine
-├── pages/
-│   ├── 1_Home_Dashboard.py
-│   ├── 2_Dataset_Insights.py
-│   ├── 3_Model_Evaluation.py
-│   ├── 4_Live_Prediction.py
-│   ├── 5_Anomaly_Detection.py
-│   └── 6_Maintenance_Recommendations.py
-├── .streamlit/config.toml     # Dark theme config
-├── app.py                     # Entry point
-├── requirements.txt
-└── vercel.json
+│   ├── assets/             # Profile photo (profile.jpg)
+│   ├── components/
+│   │   ├── Navbar.jsx / .css
+│   │   ├── Hero.jsx / .css
+│   │   ├── About.jsx / .css
+│   │   ├── Skills.jsx / .css
+│   │   ├── Projects.jsx / .css
+│   │   ├── Certifications.jsx / .css
+│   │   ├── Education.jsx / .css
+│   │   ├── Contact.jsx / .css
+│   │   └── Footer.jsx / .css
+│   ├── App.jsx
+│   ├── App.css             # Global design system & tokens
+│   └── main.jsx
+├── index.html
+├── vite.config.js
+├── package.json
+└── README.md
 ```
 
 ---
 
-## 📊 Dataset
+## 🚀 Getting Started
 
-**AI4I 2020 Predictive Maintenance Dataset** — UCI Machine Learning Repository
+### Prerequisites
 
-- 10,000 data points, 14 features
-- 5 failure modes: TWF, HDF, PWF, OSF, RNF
-- ~3.4% failure rate (highly imbalanced)
+- [Node.js](https://nodejs.org/) v18 or higher
+- npm v9 or higher
+
+### Installation & Running
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/arivazhagansundarraj/Portfolio.git
+
+# 2. Navigate into the project
+cd Portfolio
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
+```
+
+Open your browser and visit → **http://localhost:5173**
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## 🖼️ Adding Certificate Images
+
+Place your certificate images inside the `public/certs/` folder with these exact filenames:
+
+| File Name | Certificate |
+|---|---|
+| `cert_hp_life.jpg` | HP Life — AI for Business Professionals |
+| `cert_simplilearn.jpg` | Simplilearn — Website UI/UX Designing using ChatGPT |
+| `cert_google.jpg` | Google AI & Gen AI WorkFlow |
+| `cert_infosys.jpg` | Infosys SpringBoard — Projects on Power BI |
+
+---
+
+## 🎨 Customization
+
+To personalize this portfolio for your own use:
+
+1. **Profile Photo** → Replace `src/assets/profile.jpg`
+2. **Personal Info** → Edit `Hero.jsx`, `About.jsx`, `Contact.jsx`
+3. **Skills** → Update the `skillCategories` array in `Skills.jsx`
+4. **Projects** → Update the `projects` array in `Projects.jsx`
+5. **Certifications** → Update the `certifications` array in `Certifications.jsx`
+6. **Education** → Update the `educationData` array in `Education.jsx`
+7. **Social Links** → Update LinkedIn, GitHub, and Gmail URLs across components
+
+---
+
+## 📜 Certifications Showcased
+
+- 🤖 **AI for Business Professionals** — HP Life (2025)
+- 🎨 **Website UI/UX Designing using ChatGPT** — Simplilearn SkillUp (2026)
+- 🌟 **Google AI & Gen AI WorkFlow** — Google Gemini (2025)
+- 📊 **Projects on Power BI** — Infosys SpringBoard (2026)
+
+---
+
+## 💼 Projects Showcased
+
+- 👕 **Hunted.in** — Online Clothing E-Commerce Platform
+- 📊 **Nexus** — Online Business Analysis Platform
+- 🌍 **Global Superstore BI Dashboard** — Power BI Business Intelligence Dashboard
+
+---
+
+## 📬 Contact
+
+| Platform | Link |
+|---|---|
+| 📧 Email | [arivazhaganarivu0611@gmail.com](https://mail.google.com/mail/?view=cm&to=arivazhaganarivu0611@gmail.com) |
+| 💼 LinkedIn | [arivazhagan-sundarraj-862004394](https://www.linkedin.com/in/arivazhagan-sundarraj-862004394) |
+| 🐙 GitHub | [arivazhagansundarraj](https://github.com/arivazhagansundarraj) |
+| 📍 Location | Tiruppur, Tamil Nadu, India |
 
 ---
 
 ## 📄 License
 
-MIT License — free to use, modify, and distribute.
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+**Designed & Developed with ❤️ by [Arivazhagan Sundarraj](https://github.com/arivazhagansundarraj)**
+
+⭐ Star this repo if you found it helpful!
+
+</div>

@@ -1,0 +1,231 @@
+.education-section {
+  background: var(--bg-primary);
+}
+
+/* Timeline */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.edu-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 28px;
+  position: relative;
+}
+
+/* Timeline Line */
+.timeline-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.timeline-dot {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  border: 3px solid var(--bg-primary);
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.edu-item:hover .timeline-dot {
+  transform: scale(1.15);
+}
+
+.timeline-connector {
+  width: 2px;
+  flex: 1;
+  min-height: 40px;
+  margin-top: 8px;
+  opacity: 0.4;
+}
+
+/* Edu Card */
+.edu-card {
+  background: rgba(10, 10, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 28px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--edu-color), transparent);
+  opacity: 0.6;
+}
+
+.edu-item:hover .edu-card {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateX(8px);
+  box-shadow: -4px 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Header */
+.edu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.edu-main {
+  flex: 1;
+}
+
+.edu-institution {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 4px;
+}
+
+.edu-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #64748b;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.edu-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 16px;
+  border: 1px solid;
+  border-radius: 14px;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.score-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 2px;
+}
+
+/* Degree */
+.edu-degree {
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+/* Meta */
+.edu-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.edu-period {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #64748b;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.edu-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.edu-status.completed {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.edu-status.ongoing {
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.status-dot-anim {
+  width: 6px;
+  height: 6px;
+  background: #6366f1;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Highlights */
+.edu-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.edu-highlight {
+  padding: 4px 12px;
+  border: 1px solid;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 600px) {
+  .edu-item {
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+  }
+  .timeline-dot {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .edu-card-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .edu-score {
+    margin-left: 0;
+  }
+}
